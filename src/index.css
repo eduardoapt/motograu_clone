@@ -1,4 +1,15 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gap-4 {
+  gap: 4%;
+}
+
+.hover\:brightness-9:hover {
+  filter: brightness(90%);
+}
+
+.hover\:translate-y-1px:hover {
+  transform: translateY(3px);
+}
