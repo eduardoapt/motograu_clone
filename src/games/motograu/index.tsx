@@ -2,14 +2,14 @@ import './index.css'
 
 import React, { useContext, useEffect } from 'react'
 import Display from './components/display'
-import Snackbar from '@/core/components/snackbar'
-import Results from '@/core/components/results'
-import TransactionBar from '@/core/components/transaction-bar'
-import Controls from '@/core/components/controls/crash-control'
-import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
-import { SessionContext } from '@/core/providers/session.provider'
-import { GameStatus } from '@/core/providers/enums/game-status'
-import Navbar from '@/core/components/navbar'
+import Snackbar from '../../core/components/snackbar'
+import Results from '../..//core/components/results'
+import TransactionBar from '../..//core/components/transaction-bar'
+import Controls from '../../customs/custom-controls/crash-control'
+import { CrashGameContext } from '../../core/providers/games/crash-game.provider'
+import { SessionContext } from '../../core/providers/session.provider'
+import { GameStatus } from '../../core/providers/enums/game-status'
+import Navbar from '../../customs/custom-navbar'
 
 function HomePage() {
   const { setLoading } = useContext<any>(SessionContext)
@@ -28,37 +28,38 @@ function HomePage() {
   }, [iframeRef])
 
   return (
-    <div className="flex min-h-screen overflow-hidden bg-gradient-to-r motograu-game">
+    <div className="flex min-h-screen overflow-hidden py-0 px-0 sm:px-3 motograu-game">
       <div className="flex w-full sm:gap-3 min-h-screen relative">
         <section className="flex flex-col h-full grow p-0">
-          <div className="" style={{ zIndex: 100 }}>
+          <div style={{ zIndex: 100 }}>
             <Navbar
+              name='type-error'
               game="motograu"
               executeAction={executeAction}
               balance={balance}
             />
           </div>
           <div className="grid p-3 gap-3 grow rounded w-full grid-cols-12">
-            <div className="col-span-12 sm:col-span-4 grow xl:col-span-3 order-2 sm:order-1">
-              <TransactionBar />
+            <div className="col-span-12 sm:col-span-12 grow xl:col-span-3 order-2 xl:order-1">
+              <TransactionBar variant='slate' />
             </div>
 
-            <div className="col-span-12 sm:col-span-8 xl:col-span-9 relative order-1 sm:order-1 lg:order-2">
+            <div className="col-span-12 sm:col-span-12 xl:col-span-9 relative order-1 xl:order-2">
               <div className="flex gap-3 h-full flex-col">
-                <Results />
+                <Results variant='type-error' />
 
-                <div className="grow relative z-0">
+                <div className="grow min-h-40vh sm:min-h-60vh relative z-0">
                   <iframe
                     ref={iframeRef}
-                    className="rounded-md overflow-hidden w-full h-full pointer-events-none min-h-[250px] sm:min-h-[300px]"
+                    className="rounded-md overflow-hidden w-full h-full pointer-events-none min-h-[250px] xl:min-h-[300px]"
                     src="/motograu/index.html"
                   ></iframe>
-                  <div className="transform sm:translate-y-[-390px] translate-y-[-200px]">
-                    <Display color={'pink'} />
+                  <div className="transform absolute top-20 right-2/4">
+                    <Display color='blue' />
                   </div>
                 </div>
 
-                <Controls color="lime" position={'center'} />
+                <Controls color="login-button" />
               </div>
 
               <Snackbar />
