@@ -19,6 +19,10 @@ module.exports = {
       colors: {
         'green-custom': '#7bd95d',
       },
+      minHeight: {
+        '40vh': '40vh',
+        '60vh': '60vh',
+      },
     },
   },
   plugins: [
