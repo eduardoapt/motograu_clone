@@ -46,7 +46,6 @@ function HomePage() {
 
             <div className="col-span-12 sm:col-span-12 xl:col-span-9 relative order-1 xl:order-2">
               <div className="flex gap-3 h-full flex-col">
-                <Results variant='type-error' />
 
                 <div className="grow min-h-40vh sm:min-h-60vh relative z-0">
                   <iframe
@@ -58,6 +57,8 @@ function HomePage() {
                     <Display color='blue' />
                   </div>
                 </div>
+
+                <Results variant='type-error' />
 
                 <Controls color="login-button" />
               </div>

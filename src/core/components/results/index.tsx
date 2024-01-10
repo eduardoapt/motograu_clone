@@ -34,7 +34,7 @@ export default function MultiplierResults({ variant }: Props) {
   return (
     <div className="w-full h-6 relative z-10">
       <If condition={!expand}>
-        <div className="flex mr-10 items-center overflow-x-hidden gap-2">
+        <div className="flex mr-10 items-center overflow-x-hidden gap-1">
           {results?.map((result, idx) => {
             return (
               <Badge
@@ -42,10 +42,10 @@ export default function MultiplierResults({ variant }: Props) {
                 showRoundInfo={showRoundInfo}
                 textColor={
                   result.point < 2
-                    ? 'text-[#34b4ff]'
+                    ? 'text-[#aa5b3d]'
                     : result.point < 10
-                    ? 'text-[#913ef8]'
-                    : 'text-[#c017b4]'
+                      ? 'text-[#797979]'
+                      : 'text-[#cccc34]'
                 }
                 roundId={result.round_id}
                 multipler={result.point}
@@ -59,13 +59,14 @@ export default function MultiplierResults({ variant }: Props) {
         <div className="h-6"></div>
         <div className="h-auto  absolute -top-1 w-full rounded-md bg-black bg-opacity-80">
           <div className="rounded-md results-bar">
-            <div className="border border-b-0 border-gray-700 border-opacity-40 flex items-center justify-between relative rounded-t px-2 h-8">
+
+          <div className="border border-gray-700 border-opacity-40 flex items-center justify-between relative rounded-t px-2 h-8">
               <h3 className="text-sm uppercase">
                 Histórico de Partidas
               </h3>
             </div>
 
-            <div className="flex flex-wrap border border-gray-700 border-opacity-40 shadow max-h-40 rounded-b p-2 gap-2 overflow-y-scroll scrollbar-w-0 scrollbar-track-gray-400 scrollbar-thumb-gray-700 scrollbar scrollbar-track-rounded scrollbar-thumb-rounded">
+            <div className="flex flex-wrap border border-gray-700 border-opacity-40 shadow max-h-40 -my-48 rounded-b p-2 gap-2 overflow-y-scroll scrollbar-w-0 scrollbar-track-gray-400 scrollbar-thumb-gray-700 scrollbar scrollbar-track-rounded scrollbar-thumb-rounded">
               {results?.map((result, idx) => {
                 return (
                   <Badge
@@ -73,10 +74,10 @@ export default function MultiplierResults({ variant }: Props) {
                     showRoundInfo={showRoundInfo}
                     textColor={
                       result.point < 2
-                        ? 'text-[#34b4ff]'
-                        : result.point < 10
-                        ? 'text-[#913ef8]'
-                        : 'text-[#c017b4]'
+                      ? 'text-[#aa5b3d]'
+                      : result.point < 10
+                        ? 'text-[#797979]'
+                        : 'text-[#cccc34]'
                     }
                     roundId={result.round_id}
                     multipler={result.point}
