@@ -21,7 +21,7 @@ export default function TransactionBar({ variant }: Props) {
   ]
 
   return (
-    <div className="h-full py-8">
+    <div className="h-full py-8 lg:pb-8 lg:pt-0">
       <div className="flex flex-col transaction-bar min-h-[400px] flex-1 grow h-full w-full p-3 rounded-md bg-black bg-opacity-20 border border-gray-600 border-opacity-20 relative ">
         <section className="w-full flex justify-center ">
           <div className="w-full sm:w-[90%]">
